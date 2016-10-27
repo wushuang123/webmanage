@@ -39,6 +39,11 @@ tasks.withType(JavaCompile) {
 
 		compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
 		
+		compile group: 'commons-codec', name: 'commons-codec', version: '1.10'
+		
+		compile group: 'commons-io', name: 'commons-io', version: '2.5'
+		
+		compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.3'
 
 		
 	}
