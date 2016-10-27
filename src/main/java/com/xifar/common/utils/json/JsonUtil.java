@@ -1,6 +1,8 @@
 package com.xifar.common.utils.json;
 
 import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.xifar.common.utils.ProxyHandler;
 
@@ -22,5 +24,4 @@ public class JsonUtil {
 		IJson iJson = (IJson) proxy.bind(new JsonImpl());
 		return iJson.fromJson(json, type);
 	}
-
 }
