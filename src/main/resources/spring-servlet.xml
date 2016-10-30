@@ -18,7 +18,6 @@
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.JstlView" />
 		<property name="prefix" value="/WEB-INF/views/" />
-		<property name="suffix" value=".jsp" />
 	</bean>
 	
 	<mvc:default-servlet-handler/>
@@ -27,5 +26,7 @@
 	<mvc:resources mapping="/css/**" location="/css/" />
 	<mvc:resources mapping="/js/**" location="/js/" />
 	<mvc:resources mapping="/font/**" location="/font/" />
+	<mvc:resources mapping="/font/**" location="/font/" />
+	<mvc:resources mapping="/html/**" location="/WEB-INF/views/html/"/> 
 
 </beans>
