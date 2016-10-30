@@ -26,21 +26,21 @@ class Node<T> {
 		childrens.add((T) node);
 	}
 
-	/** 先序遍历，拼接JSON字符串 **/
-	public String toString() {
-		String result = "{" + "id : '" + id + "'" + ", text : '" + text + "'";
-		if (children.size() != 0) {
-			result += ", children : [";
-			for (int i = 0; i < children.size(); i++) {
-				result += ((Node) children.get(i)).toString() + ",";
-			}
-			result = result.substring(0, result.length() - 1);
-			result += "]";
-		} else {
-			result += ", leaf : true";
-		}
-		return result + "}";
-	}
+//	/** 先序遍历，拼接JSON字符串 **/
+//	public String toString() {
+//		String result = "{" + "id : '" + id + "'" + ", text : '" + text + "'";
+//		if (children.size() != 0) {
+//			result += ", children : [";
+//			for (int i = 0; i < children.size(); i++) {
+//				result += ((Node) children.get(i)).toString() + ",";
+//			}
+//			result = result.substring(0, result.length() - 1);
+//			result += "]";
+//		} else {
+//			result += ", leaf : true";
+//		}
+//		return result + "}";
+//	}
 
 	/** 兄弟节点横向排序 (递归) **/
 	public void sortChildren() {

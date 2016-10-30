@@ -1,4 +1,4 @@
-package com.xifar.common.utils;
+package com.xifar.common.utils.net;
 
 import java.io.BufferedReader;
 import java.io.IOException;
