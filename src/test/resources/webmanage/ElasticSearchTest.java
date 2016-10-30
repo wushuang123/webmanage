@@ -1,6 +1,6 @@
 package webmanage;
 
-import com.xifar.common.utils.json.JsonHelper;
+import com.xifar.common.utils.json.JsonUtil;
 import com.xifar.common.utils.net.HttpUtil;
 import com.xifar.elasticsearch.model.Response;
 
@@ -13,8 +13,8 @@ public class ElasticSearchTest {
 	}
 
 	private void parse(String data) {
-		Response response = JsonHelper.fromJson(data, Response.class);
-		System.out.println(JsonHelper.toJson(response.getHits().getHits().get(0).get_source()));
+		Response response = JsonUtil.fromJson(data, Response.class);
+		System.out.println(JsonUtil.toJson(response.getHits().getHits().get(0).get_source()));
 	}
 
 	public static void main(String[] args) {
