@@ -59,7 +59,12 @@ tasks.withType(JavaCompile) {
 		compile group: 'commons-io', name: 'commons-io', version: '2.5'
 		
 		compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.3'
-
+		
+		compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
+		
+		compile group: 'javax.mail', name: 'mail', version: '1.5.0-b01'
+	
+		compile group: 'javax.mail', name: 'javax.mail-api', version: '1.5.6'
 		
 	}
 }
