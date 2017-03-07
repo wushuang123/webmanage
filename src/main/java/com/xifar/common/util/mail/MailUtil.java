@@ -1,7 +1,6 @@
 package com.xifar.common.util.mail;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.mail.Message;

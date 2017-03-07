@@ -1,7 +1,6 @@
 package com.xifar.zookeeper;
 
 import java.io.IOException;
-import java.util.concurrent.CountDownLatch;
 
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;

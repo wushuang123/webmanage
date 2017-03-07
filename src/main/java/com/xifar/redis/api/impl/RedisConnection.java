@@ -1,10 +1,6 @@
 package com.xifar.redis.api.impl;
 
-import java.util.Map;
-
 import com.xifar.redis.api.interfaces.Connection;
-
-import redis.clients.jedis.Jedis;
 
 public class RedisConnection implements Connection{
 

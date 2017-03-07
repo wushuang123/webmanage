@@ -1,7 +1,5 @@
 package com.xifar.redis.api.interfaces;
 
-import java.util.Map;
-
 public interface Connection {
 	
 	/** 获取连接 **/
