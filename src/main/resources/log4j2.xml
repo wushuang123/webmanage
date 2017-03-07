@@ -6,7 +6,7 @@
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</Console>
 		<RollingFile name="RollingFile" fileName="logs/webmanage.log"
-			filePattern="logs/$${date:yyyy-MM}/lwebmanage-%d{yyyy-MM-dd}-%i.log"
+			filePattern="logs/$${date:yyyy-MM}/webmanage-%d{yyyy-MM-dd}-%i.log"
 			bufferSize="8192" bufferedIO="true" append="true">
 			<PatternLayout>
 				<Pattern>%d %p %c{2} [%t] %m%n</Pattern>

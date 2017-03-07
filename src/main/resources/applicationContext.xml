@@ -19,13 +19,16 @@
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 
+	<!-- 引入数据源 -->
+	<context:property-placeholder location="classpath:application.properties" />
+	
 	<!-- druid配置 -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
 		init-method="init" destroy-method="close">
 		<!-- 基本属性 url、user、password -->
-		<property name="url" value="${jdbc_url}" />
-		<property name="username" value="${jdbc_user}" />
-		<property name="password" value="${jdbc_password}" />
+		<property name="url" value="${jdbc.url_mysql}" />
+		<property name="username" value="${jdbc.mysql_username}" />
+		<property name="password" value="${jdbc.mysql_password}" />
 
 		<!-- 配置初始化大小、最小、最大 -->
 		<property name="initialSize" value="1" />
@@ -52,6 +55,11 @@
 			value="20" />
 
 		<!-- 配置监控统计拦截的filters -->
-		<property name="filters" value="stat" />
+		<property name="filters" value="stat,wall" />
+	</bean>
+
+	<bean id="stat-filter" class="com.alibaba.druid.filter.stat.StatFilter">
+		<property name="slowSqlMillis" value="10000" />
+		<property name="logSlowSql" value="true" />
 	</bean>
 </beans>
