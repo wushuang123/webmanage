@@ -52,6 +52,7 @@ tasks.withType(JavaCompile) {
 		
 		compile group: 'org.springframework', name: 'spring-jdbc', version: '4.3.3.RELEASE'
 		
+		compile group: 'org.springframework', name: 'spring-web', version: '4.3.4.RELEASE'
 
 		
 		compile group: 'com.alibaba', name: 'druid', version: '1.0.26'
@@ -85,8 +86,6 @@ tasks.withType(JavaCompile) {
 		compile group: 'org.springframework.data', name: 'spring-data-redis', version: '1.7.5.RELEASE'
 		
 		compile group: 'org.apache.commons', name: 'commons-pool2', version: '2.4.2'
-		
-		compile group: 'org.springframework', name: 'spring-web', version: '4.3.4.RELEASE'
 		
 		compile group: 'org.apache.zookeeper', name: 'zookeeper', version: '3.4.9'
 		
