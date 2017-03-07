@@ -1,7 +1,7 @@
 package webmanage;
 
-import com.xifar.common.utils.json.JsonUtil;
-import com.xifar.common.utils.net.HttpUtil;
+import com.xifar.common.util.json.JsonUtil;
+import com.xifar.common.util.net.HttpUtil;
 import com.xifar.elasticsearch.model.Response;
 
 public class ElasticSearchTest {
