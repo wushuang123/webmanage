@@ -199,7 +199,7 @@ public class HttpUtil {
 
 	public static void main(String[] args) throws UnsupportedEncodingException {
 		for(int i=0;i<20000;i++){
-		String url="http://ims.iteye.com/blog/2327183";
+		String url="http://ims.iteye.com/blog/2367066";
 //		List<NameValuePair> list = new ArrayList<NameValuePair>();
 //		list.add(new BasicNameValuePair("Content-Type", "application/json"));
 		String s = HttpUtil.sendGet(url, "UTF-8", null);

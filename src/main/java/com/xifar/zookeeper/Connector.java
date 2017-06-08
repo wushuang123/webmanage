@@ -11,13 +11,13 @@ public class Connector {
 		Watcher watcher = new ZooKeeperWatcher();
 		ZooKeeper zookeeper = null;
 		try {
-			zookeeper = new ZooKeeper("192.168.177.128:2181", 5000, watcher);
+			zookeeper = new ZooKeeper("192.168.177.133:2181", 5000, watcher);
+			System.out.println(zookeeper.getState());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
+			System.out.println(e);
 		}
-		System.out.println(zookeeper.getState());
 	}
 	
 

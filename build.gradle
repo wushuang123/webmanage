@@ -90,6 +90,7 @@ tasks.withType(JavaCompile) {
 		
 		compile group: 'org.apache.zookeeper', name: 'zookeeper', version: '3.4.9'
 		
+		compile group: 'org.apache.curator', name: 'curator-framework', version: '3.3.0'
 		
 		
 		
