@@ -1,4 +1,4 @@
-package com.xifar.common.utils;
+package com.xifar.common.util.encrypt;
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;

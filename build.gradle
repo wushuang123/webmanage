@@ -92,6 +92,9 @@ tasks.withType(JavaCompile) {
 		
 		compile group: 'org.apache.curator', name: 'curator-framework', version: '3.3.0'
 		
+		compile group: 'org.apache.poi', name: 'poi', version: '3.16'
+		
+		
 		
 		
 		
