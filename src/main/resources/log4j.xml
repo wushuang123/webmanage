@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+		<RollingFile name="RollingFile" fileName="logs/webmanage.log"
+			filePattern="logs/$${date:yyyy-MM}/webmanage-%d{yyyy-MM-dd}-%i.log"
+			bufferSize="8192" bufferedIO="true" append="true">
+			<PatternLayout>
+				<Pattern>%d %p %c{2} [%t] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="200" />
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.mchange" level="WARN" />
+		<Root level="debug">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="RollingFile" />
+		</Root>
+	</Loggers>
+</Configuration>
