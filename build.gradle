@@ -100,6 +100,7 @@ tasks.withType(JavaCompile) {
 		
 		compile group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: '1.5.3.RELEASE'
 
+		compile group: 'org.springframework.data', name: 'spring-data-mongodb', version: '2.0.0.RELEASE'
 		
 	}
 }
