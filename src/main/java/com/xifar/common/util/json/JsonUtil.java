@@ -6,7 +6,7 @@ import com.xifar.common.utils.ProxyHandler;
 
 public class JsonUtil {
 
-	static JsonImpl jsonImpl = new JsonImpl();
+	private static JsonImpl jsonImpl = new JsonImpl();
 
 	static ProxyHandler proxy = new ProxyHandler();
 
@@ -42,5 +42,5 @@ public class JsonUtil {
 //		IJson iJson = (IJson) proxy.getProxy(JsonImpl.class);
 //		return iJson.fromJson(json, type);
 //	}
-
+	
 }
