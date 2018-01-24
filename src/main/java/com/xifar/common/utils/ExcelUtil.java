@@ -23,7 +23,6 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.ui.Model;
 
 public class ExcelUtil {
 
@@ -43,6 +42,7 @@ public class ExcelUtil {
 	public static final int DATE = 4;
 	public static final int FLOAT = 5;
 	public static final int SHORT = 6;
+	public static final int LONG = 7;
 
 	private static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 	private static ThreadLocal<DateFormat> threadLocalDateFormat = new ThreadLocal<DateFormat>();
@@ -374,8 +374,7 @@ public class ExcelUtil {
 		if (Objects.isNull(instance) || Objects.isNull(cell) || fieldName == null || fieldName.trim() == "") {
 			return null;
 		}
-
-		int cellType = getCellTypeByType(instance.getClass().getField(fieldName).getType().getName());
+		int cellType = getCellTypeByType(instance.getClass().getDeclaredField(fieldName).getType().getName());
 		switch (cellType) {
 		case STRING:
 			if (null == map || map.size() == 0) {
@@ -383,6 +382,15 @@ public class ExcelUtil {
 			}
 			break;
 		case INT:
+			if (null == map || map.size() == 0) {
+				instance = setInstanceValue(instance, fieldName, cell.getNumericCellValue());
+			} else {
+				instance = setInstanceValue(instance, fieldName,
+						getValue(fieldName, cell.getStringCellValue(), map) == null ? cell.getStringCellValue()
+								: getValue(fieldName, cell.getStringCellValue(), map));
+			}
+			break;
+		case LONG:
 			if (null == map || map.size() == 0) {
 				instance = setInstanceValue(instance, fieldName, cell.getNumericCellValue());
 			} else {
@@ -517,6 +525,10 @@ public class ExcelUtil {
 		case SHORT:
 			obj = (Short) value;
 			break;
+		case LONG:
+			Double tempObj = new Double(String.valueOf(value));
+			obj = tempObj.longValue();
+			break;
 		case UNKNOW:
 			break;
 		default:
@@ -530,6 +542,8 @@ public class ExcelUtil {
 			return STRING;
 		} else if (Integer.class.getTypeName().equals(type)) {
 			return INT;
+		} else if (Long.class.getTypeName().equals(type)) {
+			return LONG;
 		} else if (Double.class.getTypeName().equals(type)) {
 			return DOUBLE;
 		} else if (Boolean.class.getTypeName().equals(type)) {
